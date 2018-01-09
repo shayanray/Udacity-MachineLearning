@@ -65,10 +65,12 @@ def featureFormat( dictionary, features, remove_NaN=True, remove_all_zeroes=True
         tmp_list = []
         for feature in features:
             try:
+                # print "key ",key #key  ALLEN PHILLIP K
                 dictionary[key][feature]
             except KeyError:
                 print "error: key ", feature, " not present"
                 return
+
             value = dictionary[key][feature]
             if value=="NaN" and remove_NaN:
                 value = 0
